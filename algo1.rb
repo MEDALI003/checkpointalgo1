@@ -28,3 +28,27 @@ begin
     distinct(S2,S1,s)
     write(somme(s))
 end
+//second programp 
+Function dot_product(v1, v2):
+    ps = 0
+    For i from 1 to length(v1):
+        ps = ps + v1[i] * v2[i]
+    Return ps
+
+Function are_vectors_orthogonal(v1, v2):
+    result = dot_product(v1, v2)
+    If result = 0:
+        Return True  // Vectors are orthogonal
+    Else:
+        Return False // Vectors are not orthogonal
+
+Algorithm check_orthogonality_for_n_pairs(n, vector_pairs):
+    For i from 1 to n:
+        v1 = vector_pairs[i][1]
+        v2 = vector_pairs[i][2]
+        orthogonal = are_vectors_orthogonal(v1, v2)
+        
+        If orthogonal:
+            Print("Vectors", v1, "and", v2, "are orthogonal.")
+        Else:
+            Print("Vectors", v1, "and", v2, "are not orthogonal.")
